@@ -1,0 +1,64 @@
+# Trauma LLM Assistant (Lower-Limb Soft Tissue Trauma)
+
+A simple Jupyter notebook that builds an LLM-powered conversational assistant to answer common patient questions after lower-limb trauma (e.g., road traffic accidents with soft-tissue injury). The assistant is designed to respond in clear, empathetic, plain language.
+
+## What this notebook does
+- Uses LangChain + the OpenAI API to generate answers to patient FAQ-style questions
+- Demonstrates a minimal prompt template and an execution chain
+- Lets you test example questions and interactively ask new ones
+
+## Example questions the assistant can address
+- Why didn’t the injury show up immediately?
+- Why is the skin turning black?
+- What are the goals of surgery?
+
+## Tech stack
+- Python
+- Jupyter / Google Colab
+- LangChain (langchain, langchain-community)
+- OpenAI API (requires your own API key)
+
+## Getting started
+
+### Option A: Run in Google Colab
+1. Upload the notebook to Colab or open it from GitHub.
+2. Run the installation cell.
+3. When prompted, paste your OpenAI API key (input is hidden).
+
+### Option B: Run locally
+1. Create and activate a virtual environment (recommended).
+2. Install dependencies:
+   pip install -U langchain langchain-community openai
+3. Open the notebook in Jupyter and run cells from top to bottom.
+
+## API key handling
+The notebook requests your key using getpass() so it is not displayed on screen.
+Best practice for GitHub: never hard-code API keys in notebooks or commits.
+
+If you prefer environment variables, you can set:
+- macOS/Linux: export OPENAI_API_KEY="YOUR_KEY"
+- Windows (PowerShell): setx OPENAI_API_KEY "YOUR_KEY"
+
+Then update the notebook to read OPENAI_API_KEY from the environment instead of prompting.
+
+## Customization
+- Edit the prompt template to:
+  - change language (Spanish/English)
+  - adjust tone (more/less technical)
+  - add safety constraints (e.g., when to seek urgent care)
+- Add a curated FAQ list and test cases for more consistent behavior.
+
+## Safety and limitations
+- This notebook is for education and prototyping only; it is not a medical device.
+- LLMs can produce incorrect or incomplete information.
+- Do not use outputs as a substitute for professional medical assessment.
+- Do not include any patient-identifiable information in prompts or logs.
+
+## Suggested next improvements (optional)
+- Migrate to chat models and newer LangChain integrations
+- Add retrieval (RAG) from trusted patient education documents
+- Add structured guardrails for red flags and escalation to urgent care
+- Add automated tests with a small fixed set of questions
+
+## License
+Choose a license that matches how you want others to use the code (MIT is a common default).
